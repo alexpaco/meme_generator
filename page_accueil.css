@@ -1,0 +1,111 @@
+body{
+	margin: 0;
+	text-align: center;
+}
+header{
+	display: flex;
+	height: 100px;
+	background-color: darkgrey;
+	justify-content: space-around;
+	align-items: center;
+}
+
+
+/*-----------------------PAGE ACCUEIL------------------------*/
+
+.creer{
+	text-decoration: none;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 160px;
+	border: 1px solid red;
+	border-radius: 50px;
+}
+
+.creer:hover {
+	background-color: white;
+}
+
+.logo {
+	font-size: 45px;
+}
+
+#spanLogo {
+	font-size: 20px;
+}
+.logo{
+	text-decoration: none;
+	color: black;
+}
+.memepresentation{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 76%;
+	margin-left: 12%;
+}
+.memedefaut{
+	width: 225px;
+	height: 225px;
+	border-bottom: 1px solid darkgrey;
+}
+.meme{
+	margin-bottom: 15px;
+	text-align: center;
+	border: 1px solid darkgrey;
+	background-color: beige;
+}
+.twitter{
+	text-decoration: none;
+	color: black;
+}
+.twitter:hover{
+	color: red;
+	text-decoration: none;
+}
+
+/*---------------------------PAGE DETAILS--------------------*/
+
+.presentation{
+	display: flex;
+	flex-direction: column;
+	width: 35%;
+	margin-left: 32.5%;
+	border: 1px solid darkgrey;
+	background-color: beige;
+}
+.imagedetail{
+	width: 100%;
+}
+
+
+
+
+@media screen and (max-width: 450px) {
+
+	header {
+		display: block;
+		padding-bottom: 15px;
+		margin: 0px;
+		padding-top: 15px;
+	}
+
+	.creer {
+		text-align: center;
+	}
+
+	.logo {
+		text-align: center;
+		font-size: 25px;
+		margin-top: 0px;
+	}
+
+	.presentation {
+		width: 90%;
+		margin-left: 5%;
+	}
+  
+}

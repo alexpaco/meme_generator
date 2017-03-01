@@ -1,0 +1,96 @@
+body{
+	margin: 0;
+	text-align: center;
+}
+header{
+	display: flex;
+	height: 100px;
+	background-color: darkgrey;
+	justify-content: space-around;
+	align-items: center;
+}
+
+
+/*-----------------------PAGE ACCUEIL------------------------*/
+
+.creer{
+	text-decoration: none;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 160px;
+	border: 1px solid red;
+	border-radius: 50px;
+}
+
+.creer:hover {
+	background-color: white;
+}
+
+.logo {
+	font-size: 45px;
+}
+
+#spanLogo {
+	font-size: 20px;
+}
+
+h1 {
+	text-align: center;
+}
+
+#formUploadImg {
+	text-align: center;
+}
+
+#formAjoutText {
+	width: 50%;
+	margin-left: 25%;
+	text-align: center;
+}
+
+#texteHaut, #texteBas {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 0;
+	width: 100%;
+}
+
+.change {
+	max-width: 100px;
+	height: 15px;
+	margin: 0px;
+}
+
+#recupAjax2 {
+	width: 200px;
+	height: 50px;
+}
+
+#formAjoutText, #formEnregistrement {
+	visibility: hidden;
+}
+
+@media screen and (max-width: 450px) {
+
+	header {
+		display: block;
+		padding-bottom: 15px;
+		margin: 0px;
+		padding-top: 15px;
+	}
+
+	.creer {
+		text-align: center;
+	}
+
+	.logo {
+		text-align: center;
+		font-size: 25px;
+		margin-top: 0px;
+	}
+  
+}
