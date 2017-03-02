@@ -1,19 +1,22 @@
 body{
 	margin: 0;
 	text-align: center;
+	background-color: #D2D8DB;
 }
 header{
 	display: flex;
 	height: 100px;
-	background-color: darkgrey;
+	background-color: #0D2C54;
 	justify-content: space-around;
 	align-items: center;
+	box-shadow: 1px 1px 1px black;
 }
 
 
 /*-----------------------PAGE ACCUEIL------------------------*/
 
 .creer{
+	color: #F4967A;
 	text-decoration: none;
 	text-align: center;
 	padding-top: 10px;
@@ -21,25 +24,31 @@ header{
 	padding-left: 5px;
 	padding-right: 5px;
 	width: 160px;
-	border: 1px solid red;
+	border: 1px solid #F4967A;
 	border-radius: 50px;
 }
 
 .creer:hover {
-	background-color: white;
+	background-color: #F4967A;
+	color: #0D2C54;
 }
 
 .logo {
 	font-size: 45px;
+	color: #F47E5A;
+	text-shadow: 1px 1px 1px black;
 }
 
 #spanLogo {
 	font-size: 20px;
+	color: #F47E5A;
 }
-.logo{
-	text-decoration: none;
-	color: black;
+
+h1 {
+	color: #13427F;
+	text-shadow: 1px 1px 1px #F47E5A;
 }
+
 .memepresentation{
 	display: flex;
 	flex-wrap: wrap;
@@ -50,20 +59,21 @@ header{
 .memedefaut{
 	width: 225px;
 	height: 225px;
-	border-bottom: 1px solid darkgrey;
 }
 .meme{
 	margin-bottom: 15px;
 	text-align: center;
-	border: 1px solid darkgrey;
-	background-color: beige;
+	background-color: #424444;
+	padding-bottom: 5px;
+	color: white;
+	box-shadow: 1px 1px 1px black;
 }
 .twitter{
 	text-decoration: none;
-	color: black;
+	color: white;
 }
 .twitter:hover{
-	color: red;
+	color: #F47E5A;
 	text-decoration: none;
 }
 
@@ -75,7 +85,8 @@ header{
 	width: 35%;
 	margin-left: 32.5%;
 	border: 1px solid darkgrey;
-	background-color: beige;
+	background-color: #424444;
+	color: white;
 }
 .imagedetail{
 	width: 100%;

@@ -25,7 +25,7 @@
 	<div class="presentation">
 	<?php 
 	while($row1 = $meme->fetch()){?>
-		<img class="imagedetail" src="images/memeFini/<?= $id_meme; ?>.jpg">
+		<img class="imagedetail" src="images/memeFini/<?= $row1['nom']; ?>.jpg">
 		<div class="rien">
 			<h2><?= $row1['nom']; ?></h2>
 			<p>Créer par: <?=  $row1['auteur'] ?></p>
