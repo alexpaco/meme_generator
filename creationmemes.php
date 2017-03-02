@@ -16,7 +16,7 @@
 	</header>
 
 <h1>Créer votre propre meme ici !!</h1>
-
+<p>Nous ne traitons que les fichiers .jpg et .jpeg</p>
 <form method="post" action="" id="formUploadImg" enctype="multipart/form-data"><!--Formulaire d'upload dimage-->
 	<input type="file" name="image"/>
 	<input type="submit" name="submit" id="submit" value="Uploader" />
@@ -62,7 +62,8 @@
 	<input type="text" id="auteur" name="auteur" placeholder="Meme fait par : "><br>
 	<input type="text" id="nomMeme" name="nomMeme" placeholder="Nommez votre meme : "><br>
 	<input type="submit" id="submit1" name="submit1" value="Enregistrer">
-	<div id="recupAjax2" style="text-align: center;"></div>
+	<div id="recupAjax2"></div>
+	<div id="recupAjax3"></div>
 </form>
 
 

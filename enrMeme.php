@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+
+
 //--------------------------------------AJOUT TEXTE ET COULEUR DE TEXTE A LIMAGE-------------
 
 if(isset($_POST['texteHaut']) && !empty($_POST['texteHaut']) || isset($_POST['texteBas']) && !empty($_POST['texteBas']))
@@ -47,25 +49,27 @@ imagettftext($image, $tailleBas, $rotationBas, $leftPhraseBas, $topPhraseBas, $c
 		$nomMeme = $_POST['nomMeme'];
 		$auteur = $_POST['auteur'];
 
-	
-		ob_start();
-			imagejpeg($image);
-    		$objet = ob_get_contents();
-    	ob_end_clean ();
-		$enc = base64_encode($objet);
-		echo($enc);
-		imagejpeg($image, 'images/memeFini/'.$nomMeme.'.png');
-		 //on enregistre limage dans un dossier
+	$bdd = new PDO('mysql:host=localhost;dbname=pacoret;charset=utf8', 'pacoret', 'IGcWnccPMKvTAo69');
+	$req3 = $bdd->prepare('SELECT nom FROM memedefaut WHERE nom = ?');
+    $req3->execute(array(
+            $nomMeme,
+            ));
+    $count = $req3->rowCount();
 
-		 
-
-	$bdd = new PDO('mysql:host=localhost;dbname=meme;charset=utf8', 'root', '');
-	$req = $bdd->prepare('INSERT INTO memedefaut(nom, auteur) VALUES (:nom, :auteur)'); //insertion des articles dans leur base de de données
+    if($count > 0) {
+echo ('<script type="text/javascript"> alert("Ce nom de meme est deja pris, faite travailler votre imagination !"); </script>');
+    }
+    else if($count == 0) 
+	{
+		imagejpeg($image, 'images/memeFini/'.$nomMeme.'.jpg');
+		//on enregistre limage dans un dossier
+		$req = $bdd->prepare('INSERT INTO memedefaut(nom, auteur) VALUES (:nom, :auteur)'); //insertion des articles dans leur base de de données
                     $req->execute(array(
                     'nom' => $nomMeme,
                     'auteur' => $auteur));
+	}
 
-}
+	}
 
 
 }

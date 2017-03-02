@@ -62,7 +62,6 @@ if(isset($_POST['texteHaut']) && !empty($_POST['texteHaut']) || isset($_POST['te
 
 
 
-
 }
 
 

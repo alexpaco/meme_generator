@@ -2,8 +2,11 @@
 	require 'connexion.php';
 
 	$id_meme = $_GET['id'];
-	$auteur_meme = $_GET['name'];
-	$url = "http://localhost/13_meme_generator/detailsmeme.php?id=";
+	$url = "http://pacoret.chalon.codeur.online/meme_generator/detailsmeme.php?id=".$id_meme;
+
+	$meme = $bdd->prepare('SELECT * FROM memedefaut WHERE nom = ?');
+	$meme->execute(array($id_meme));
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,13 +23,16 @@
 	</header>
 	</br>
 	<div class="presentation">
-		<img class="imagedetail" src="images/memeFini/<?= $id_meme; ?>.png">
+	<?php 
+	while($row1 = $meme->fetch()){?>
+		<img class="imagedetail" src="images/memeFini/<?= $id_meme; ?>.jpg">
 		<div class="rien">
-			<h2><?= $id_meme; ?></h2>
-			<p>Créer par: <?=  $auteur_meme; ?></p>
-			<a href="http://www.facebook.com/sharer/sharer.php?url=<?= $url; ?><?= $id_meme ?>&name=<?= $auteur_meme; ?>" class="fa fa-facebook twitter" target="_blank"></a>
-			<a href="https://twitter.com/intent/tweet/?url=<?= $url; ?><?= $id_meme ?>&name=<?= $auteur_meme; ?>" class="fa fa-twitter twitter" target="_blank"></a>
+			<h2><?= $row1['nom']; ?></h2>
+			<p>Créer par: <?=  $row1['auteur'] ?></p>
+			<a href="http://www.facebook.com/sharer/sharer.php?url=<?= $url; ?>" class="fa fa-facebook twitter" target="_blank"></a>
+			<a href="https://twitter.com/intent/tweet/?url=<?= $url; ?>" class="fa fa-twitter twitter" target="_blank"></a>
 		</div>
+		<?php } ?>
 	</div>
 </body>
 </html>

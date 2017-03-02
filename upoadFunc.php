@@ -31,6 +31,5 @@ session_start();
         else{
             echo "Ce fichier n'est pas une image";
         }
-    
 
 ?>

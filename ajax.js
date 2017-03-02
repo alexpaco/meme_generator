@@ -43,7 +43,6 @@ $(document).ready(function () {
     $("#submit1").on('click', function (e) 
     { //submit du formulaire qui enregistre le meme avec les modifications
 
-        	e.preventDefault();
             var texteHaut = $('#test').val();//valeur des input des modifs 
 			var texteBas = $('#test1').val();
 			var colorHaut = $('#color').val();//valeur des input des modifs 
@@ -59,6 +58,13 @@ $(document).ready(function () {
 			var leftPhraseBas = $('#left1').val();
 			var topPhraseBas = $('#top1').val();
 			var submit = $('#submit1').val();
+
+			if(auteur !== "" && nomMeme !== "") {
+				$('#recupAjax2').html('<a style="width: 200px; height: 100px;" href="images/memeFini/'+ nomMeme +'.jpg" download>Télécharger votre meme</a>');
+    		} else {
+    		e.preventDefault();
+    		alert('Remplissez les champs demandés');
+    		}
 				
 				$.post('enrMeme.php',{  'auteur':auteur, //ces ces valeur envoyés pour enregistrement du meme qui se fait dans la page php
 										'nomMeme':nomMeme, 
@@ -78,20 +84,9 @@ $(document).ready(function () {
 											
 										});
 			
-			$('#recupAjax2').html('<a style="width: 200px; height: 100px;" href="images/memeFini/'+ nomMeme +'.png" download>Télécharger votre meme</a>');
+			
 			
             });
-
-$("#submit1").on('click', function (eve) 
-    {
-    	var champ1 = $('#auteur').val();
-    	var cham2 = $('#nomMeme').val();
-    	if(champ1 !== "" && champ2 !== "") {
-
-    	} else {
-    		eve.preventDefault();
-    		alert('Remplissez les champs demandés');
-    	}
-    });
-            
+			
+                
  });
